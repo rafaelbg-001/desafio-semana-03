@@ -18,6 +18,10 @@ public class Service {
 
     private final Repository repository;
 
+    public Person findByUsername(String username){
+        return repository.findByName(username).orElseThrow();
+    }
+
     public void save(Person person) {
         repository.save(person);
     }
